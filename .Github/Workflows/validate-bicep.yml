@@ -1,0 +1,77 @@
+name: Validate Bicep Templates
+
+on:
+  pull_request:
+    branches:
+      - main
+
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+
+  validate-bicep:
+
+    name: Bicep Validation
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # 1. Download repository code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+
+      # 2. Install Azure Bicep CLI
+      - name: Setup Bicep CLI
+        uses: azure/bicep-setup@v1
+        with:
+          version: latest
+
+
+      # 3. Check Bicep syntax
+      - name: Validate Bicep files
+        shell: bash
+        run: |
+          echo "Searching for Bicep files..."
+
+          files=$(find . -type f -name "*.bicep")
+
+          if [ -z "$files" ]; then
+            echo "No Bicep files found."
+            exit 0
+          fi
+
+          for file in $files
+          do
+            echo "--------------------------------"
+            echo "Validating: $file"
+
+            bicep build "$file" --stdout > /dev/null
+
+            if [ $? -ne 0 ]; then
+              echo "FAILED: $file"
+              exit 1
+            fi
+
+            echo "PASSED: $file"
+          done
+
+
+      # 4. Run Bicep linter
+      - name: Run Bicep lint
+        shell: bash
+        run: |
+          echo "Running Bicep lint..."
+
+          for file in $(find . -type f -name "*.bicep")
+          do
+            echo "Linting: $file"
+            az bicep lint --file "$file"
+          done
