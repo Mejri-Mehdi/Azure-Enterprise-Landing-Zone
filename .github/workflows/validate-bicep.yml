@@ -28,14 +28,14 @@ jobs:
         uses: actions/checkout@v4
 
 
-      # 2. Install Azure Bicep CLI
+      # 2. Install Azure CLI + Bicep CLI
       - name: Setup Bicep CLI
-        uses: azure/bicep-setup@v1
-        with:
-          version: latest
+        run: |
+          az bicep install
+          az bicep version
 
 
-      # 3. Check Bicep syntax
+      # 3. Validate Bicep files
       - name: Validate Bicep files
         shell: bash
         run: |
@@ -53,7 +53,7 @@ jobs:
             echo "--------------------------------"
             echo "Validating: $file"
 
-            bicep build "$file" --stdout > /dev/null
+            az bicep build --file "$file" --stdout > /dev/null
 
             if [ $? -ne 0 ]; then
               echo "FAILED: $file"
@@ -63,13 +63,21 @@ jobs:
             echo "PASSED: $file"
           done
 
+
       # 4. Run Bicep linter
       - name: Run Bicep lint
         shell: bash
         run: |
           echo "Running Bicep lint..."
 
-          for file in $(find . -type f -name "*.bicep")
+          files=$(find . -type f -name "*.bicep")
+
+          if [ -z "$files" ]; then
+            echo "No Bicep files found."
+            exit 0
+          fi
+
+          for file in $files
           do
             echo "Linting: $file"
             az bicep lint --file "$file"
