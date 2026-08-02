@@ -13,4 +13,4 @@ echo "Location: $LOCATION"
 az deployment tenant what-if \
   --name "$DEPLOYMENT_NAME" \
   --location "$LOCATION" \
-  --template-file "$TEMPLATE"
+  --template-file "$TEMPLATE" 

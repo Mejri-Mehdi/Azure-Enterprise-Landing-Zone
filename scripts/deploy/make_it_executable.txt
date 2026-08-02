@@ -1,1 +1,1 @@
-chmod +x scripts/deploy/what-if.sh
+chmod +x scripts/deploy/what-if.sh 
