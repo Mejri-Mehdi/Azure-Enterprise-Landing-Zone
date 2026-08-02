@@ -50,7 +50,7 @@ resource budgetNonProd 'Microsoft.Consumption/budgets@2023-03-01' = {
         contactGroups: [ actionGroup.id ]
       }
     }
-  }
+  } 
 }
 
 // ── Budget for Production ──────────────────────────────
