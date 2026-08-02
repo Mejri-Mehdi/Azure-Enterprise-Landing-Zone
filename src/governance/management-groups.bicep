@@ -11,3 +11,4 @@ resource mgSandbox 'Microsoft.Management/managementGroups@2021-04-01' = {
     }
   }
 }
+ 

@@ -12,4 +12,4 @@
 ## Next Steps
 - Add `mg-prod` and `mg-nonprod` management groups.
 - Apply Azure Policies at the management group level.
-- Build the full hierarchy: `mg-root` → `mg-prod`, `mg-nonprod`, `mg-sandbox`.
+- Build the full hierarchy: `mg-root` → `mg-prod`, `mg-nonprod`, `mg-sandbox`. 
