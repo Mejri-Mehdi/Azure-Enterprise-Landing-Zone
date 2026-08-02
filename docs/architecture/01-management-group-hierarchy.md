@@ -1,15 +1,23 @@
 # Management Group Hierarchy
 
 ## Current State
-- **Tenant Root Group** (`/providers/Microsoft.Management/managementGroups/{tenant-id}`)
-  - **mg-nexgen-sandbox** – Sandbox environment for testing and experimentation.
 
-## Naming Convention
-- `mg-` prefix stands for “management group”.
-- `nexgen` refers to the fictional company NexGen Tech.
-- `sandbox` identifies the environment type.
+```
 
-## Next Steps
-- Add `mg-prod` and `mg-nonprod` management groups.
-- Apply Azure Policies at the management group level.
-- Build the full hierarchy: `mg-root` → `mg-prod`, `mg-nonprod`, `mg-sandbox`. 
+Tenant Root Group
+└── mg-nexgen-root
+├── mg-nexgen-prod
+├── mg-nexgen-nonprod
+└── mg-nexgen-sandbox
+
+```
+
+## Why This Structure?
+- **mg-nexgen-root** – Top-level container for all NexGen subscriptions. Policies applied here cascade to all environments.
+- **mg-nexgen-prod** – Production workloads. Strictest policies, resource locks, and budget alerts live here.
+- **mg-nexgen-nonprod** – Development, testing, staging. Relaxed policies but still governed.
+- **mg-nexgen-sandbox** – Experimentation and learning. Separated to prevent accidental production impact.
+
+## What’s Next
+- Apply Azure Policies at each level (e.g., required tags, allowed regions).
+- Assign custom RBAC roles.
