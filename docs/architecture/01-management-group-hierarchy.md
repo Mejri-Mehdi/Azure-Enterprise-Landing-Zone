@@ -21,3 +21,13 @@ Tenant Root Group
 ## What’s Next
 - Apply Azure Policies at each level (e.g., required tags, allowed regions).
 - Assign custom RBAC roles.
+
+## Screenshots
+
+---
+![alt text](<Screenshot 2026-08-02 140014.png>)
+---
+![alt text](<Screenshot 2026-08-02 140326.png>)
+---
+![alt text](<Screenshot 2026-08-02 140329.png>)
+---
