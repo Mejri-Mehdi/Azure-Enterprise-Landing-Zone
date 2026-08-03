@@ -21,3 +21,21 @@ Enforce that every resource in the mg-nexgen-root hierarchy has a `CostCenter` t
 - Add more mandatory tags (Environment, Owner, Project).
 - Combine into an Initiative (Azure Policy Set).
 - Automate deployment via CI/CD pipeline.
+
+## Screenshots
+
+---
+![alt text](<Screenshot 2026-08-02 165035.png>)
+---
+![alt text](<Screenshot 2026-08-02 165225.png>)
+---
+![alt text](<Screenshot 2026-08-02 165707.png>)
+---
+![alt text](<Screenshot 2026-08-02 165809.png>)
+---
+![alt text](<Screenshot 2026-08-02 165814.png>)
+---
+![alt text](<Screenshot 2026-08-02 165828.png>)
+---
+![alt text](<Screenshot 2026-08-02 165847.png>)
+---
