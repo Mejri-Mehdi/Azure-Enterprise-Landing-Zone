@@ -35,3 +35,13 @@ This document defines the five custom Azure roles that form the foundation of ou
 - **Least privilege:** Every role starts with zero permissions; only the minimum required actions are granted.
 - **Separation of duties:** No single role can manage both infrastructure and identity/security.
 - **Automation ready:** Roles are defined in Bicep, deployed via CI/CD, and scoped at management group level for inheritance.
+
+## Screenshots
+
+---
+![alt text](<Screenshot 2026-08-02 160534.png>)
+---
+![alt text](<Screenshot 2026-08-02 160917.png>)
+---
+![alt text](<Screenshot 2026-08-02 160932.png>)
+---
