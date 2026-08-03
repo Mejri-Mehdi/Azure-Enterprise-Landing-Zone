@@ -34,3 +34,9 @@ Multiple thresholds give teams time to react before costs exceed expectations. T
 - **Per‑team budgets:** Break down budgets by `CostCenter` tag to hold individual teams accountable.
 - **Cost dashboards:** Build Azure Workbooks showing real‑time cost by project, environment, and resource type.
 - **Anomaly alerts:** Enable Cost Management anomaly detection for unusual spend patterns.
+
+## Screenshot
+
+---
+![alt text](<Screenshot 2026-08-02 163412.png>)
+---
