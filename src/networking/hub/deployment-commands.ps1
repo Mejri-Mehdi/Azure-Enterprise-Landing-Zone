@@ -61,10 +61,23 @@ az network vnet subnet update `
 
 
 
+-----------------------------------------------------------------------------------------------------------------------------
 
 
 
 
+
+$hubVnetId = az network vnet show --name vnet-hub-eastus --resource-group rg-networking-hub --query id -o tsv
+$spokeProdVnetId = az network vnet show --name vnet-prod-eastus --resource-group rg-networking-spoke-prod --query id -o tsv
+$spokeDevVnetId = az network vnet show --name vnet-dev-eastus --resource-group rg-networking-spoke-dev --query id -o tsv
+
+
+
+
+az deployment group create `
+  --resource-group rg-networking-hub `
+  --template-file src/networking/hub/hub-peering.bicep `
+  --parameters spokeProdVnetId=$spokeProdVnetId spokeDevVnetId=$spokeDevVnetId
 
 
 
