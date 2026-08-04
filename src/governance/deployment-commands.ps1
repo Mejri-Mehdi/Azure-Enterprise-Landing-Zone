@@ -39,10 +39,15 @@ az deployment sub create `
 
 
 
+--------------------------------------------------------------------------------------------------------------------------
 
 
 
 
+az deployment sub create `
+  --location eastus `
+  --template-file src/governance/budgets.bicep `
+  --parameters budgetAlertEmail='your.real@email.com'
 
 
 
