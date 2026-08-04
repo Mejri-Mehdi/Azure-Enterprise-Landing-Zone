@@ -17,3 +17,9 @@ Bastion enables browser‑based RDP and SSH to VMs that have **no public IP**. A
 ---
 ![alt text](<Screenshot 2026-08-04 174450.png>)
 ---
+
+### Azure Firewall + Forced Tunneling
+
+- **Firewall:** `fw-hub` (Standard SKU) in `AzureFirewallSubnet`.
+- **UDR:** Route table `rt-hub-shared-svc` forces all internet‑bound traffic (0.0.0.0/0) to the firewall’s private IP.
+- **Test Result:** VM in `snet-shared-svc` without a public IP shows egress IP = firewall public IP (screenshot attached).
