@@ -15,7 +15,11 @@ Bastion enables browser‑based RDP and SSH to VMs that have **no public IP**. A
 ## Screenshots
 
 ---
-![alt text](<Screenshot 2026-08-04 174450.png>)
+![alt text](<Screenshot 2026-08-04 175203.png>)
+---
+![alt text](<Screenshot 2026-08-04 175249.png>)
+---
+![alt text](<Screenshot 2026-08-04 175307.png>)
 ---
 
 ### Azure Firewall + Forced Tunneling
