@@ -1,0 +1,1 @@
+az policy state trigger-scan --scope "/providers/Microsoft.Management/managementGroups/mg-nexgen-root"
