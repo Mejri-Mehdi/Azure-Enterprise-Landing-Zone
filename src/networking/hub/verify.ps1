@@ -1,0 +1,1 @@
+az network public-ip show --name pip-firewall-hub --resource-group rg-networking-hub --query ipAddress -o tsv
