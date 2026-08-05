@@ -42,4 +42,4 @@ resource dnsZoneGroup 'Microsoft.Network/privateEndpoints/privateDnsZoneGroups@2
       }
     ]
   } 
-}
+} 
