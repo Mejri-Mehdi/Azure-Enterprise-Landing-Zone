@@ -6,5 +6,7 @@
 ## Screenshots
 
 ---
+![alt text](<Screenshot 2026-08-06 143645.png>)
 ---
+![alt text](<Screenshot 2026-08-06 143730.png>)
 ---
