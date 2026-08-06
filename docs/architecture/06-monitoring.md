@@ -13,3 +13,12 @@
 ---
 ![alt text](<Screenshot 2026-08-06 141617.png>)
 --- 
+
+
+# Monitoring & Alerting
+
+## Action Group
+- `ag-nexgen-critical` – sends email alerts to admin.
+
+## Activity Log Alerts
+- **Resource Group Deletion:** Triggers on any `resourceGroups/delete` operation in the subscription. Tested and verified.
