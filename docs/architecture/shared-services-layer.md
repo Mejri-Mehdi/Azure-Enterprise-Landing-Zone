@@ -21,3 +21,13 @@ The shared‑services layer provides centralised operational and security capabi
 
 ## Deployment
 All services are deployed from a single orchestrator Bicep file (`src/shared-services/main.bicep`) at the subscription scope, ensuring consistency and repeatability.
+
+## Screenshots
+
+---
+![alt text](<Screenshot 2026-08-06 144746.png>)
+--- 
+![alt text](<Screenshot 2026-08-06 145230.png>)
+---
+![alt text](<Screenshot 2026-08-06 145125.png>)
+---
