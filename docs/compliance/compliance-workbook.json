@@ -1,0 +1,35 @@
+{
+  "version": "Notebook/1.0",
+  "items": [
+    {
+      "type": 1,
+      "content": {
+        "json": "# NexGen Cloud Compliance Dashboard\nReal-time policy compliance across all subscriptions and management groups."
+      }
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "policyresources\n| where type == 'microsoft.policyinsights/policystates'\n| extend complianceState = tostring(properties.complianceState)\n| summarize count() by complianceState\n| render piechart",
+        "title": "Overall Compliance State"
+      }
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "policyresources\n| where type == 'microsoft.policyinsights/policystates'\n| where properties.complianceState == 'NonCompliant'\n| project PolicyName = tostring(properties.policyDefinitionName), Resource = tostring(properties.resourceId), State = properties.complianceState\n| take 50",
+        "title": "Top Non-Compliant Resources"
+      }
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "policyresources\n| where type == 'microsoft.policyinsights/policystates'\n| summarize Compliant = countif(properties.complianceState == 'Compliant'), NonCompliant = countif(properties.complianceState == 'NonCompliant') by PolicyName = tostring(properties.policyDefinitionName)\n| extend ComplianceRate = round(todouble(Compliant) / (Compliant + NonCompliant) * 100, 2)\n| project PolicyName, ComplianceRate, Compliant, NonCompliant\n| order by ComplianceRate asc",
+        "title": "Compliance Rate by Policy"
+      }
+    }
+  ]
+}
