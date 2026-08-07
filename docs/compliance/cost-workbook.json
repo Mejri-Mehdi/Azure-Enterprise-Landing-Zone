@@ -1,0 +1,27 @@
+{
+  "version": "Notebook/1.0",
+  "items": [
+    {
+      "type": 1,
+      "content": {
+        "json": "# NexGen Cost Allocation Dashboard\nCost breakdown by environment, resource group, and tag."
+      }
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "usage\n| where TimeGenerated > ago(30d)\n| extend Environment = tostring(tags['Environment'])\n| where isnotempty(Environment)\n| summarize Cost = sum(pretaxCost) by Environment\n| render barchart",
+        "title": "Cost by Environment (Last 30 Days)"
+      }
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "usage\n| where TimeGenerated > ago(30d)\n| summarize Cost = sum(pretaxCost) by ResourceGroup\n| top 10 by Cost desc\n| render barchart",
+        "title": "Top 10 Resource Groups by Cost"
+      }
+    }
+  ]
+}
