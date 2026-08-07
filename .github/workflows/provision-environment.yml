@@ -1,0 +1,66 @@
+name: Provision Environment
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+          - dev
+          - test
+          - prod
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Bicep CLI
+        uses: azure/bicep-setup@v1
+        with:
+          version: latest
+
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Bicep Build
+        run: |
+          az bicep build --file src/environments/${{ inputs.environment }}-environment.bicep
+
+      - name: What-If
+        run: |
+          az deployment sub what-if \
+            --location eastus \
+            --template-file src/environments/${{ inputs.environment }}-environment.bicep \
+            --parameters adminPassword='${{ secrets.SQL_ADMIN_PASSWORD }}'
+
+  deploy:
+    needs: validate
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    environment: ${{ inputs.environment }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Bicep CLI
+        uses: azure/bicep-setup@v1
+        with:
+          version: latest
+
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy
+        run: |
+          az deployment sub create \
+            --location eastus \
+            --template-file src/environments/${{ inputs.environment }}-environment.bicep \
+            --parameters adminPassword='${{ secrets.SQL_ADMIN_PASSWORD }}'
