@@ -15,11 +15,11 @@ This repository is the result: a **real-world, deployable enterprise landing zon
 
 ## 🗺️ Architecture at a Glance
 
-![High-Level Architecture Overview](Architecture%20Overview.png)
+![High-Level Architecture Overview](/overview/Architecture%20Overview.png)
 
 *The full logical architecture: management groups, hub-spoke network, governance layer, and self-service platform.*
 
-![Hub-and-Spoke Network Diagram](02-hub-and-spoke-network.png)
+![Hub-and-Spoke Network Diagram](/overview/02-hub-and-spoke-network.png)
 
 *Detailed network diagram: hub VNet with Bastion, Firewall, gateway; peered to Prod and Dev spokes; tiered NSGs, private endpoints, and forced tunneling.*
 
@@ -104,11 +104,13 @@ Turning a working infrastructure into a portfolio piece.
 - **Backup policies** with 30‑day retention and instant restore
 - **Automated alerts** for resource group deletion and budget thresholds
 
-![Mind Map of Key Components](./diagram1.svg)
-*Interactive mind map of the entire foundation.*
-
-![Project Journey & Skills Demonstrated][text](<diagram 2.html>)
-*At a glance: how each phase maps to real‑world cloud architect skills.*
+---
+![alt text](</overview/Screenshot 2026-08-07 172541.png>)
+---
+![alt text](</overview/Screenshot 2026-08-07 172555.png>)
+---
+![alt text](</overview/Screenshot 2026-08-07 172602.png>)
+---
 
 ---
 
@@ -207,7 +209,6 @@ Full instructions are available inside each phase folder and the project documen
 │
 ├── scripts/                   # Utility & validation scripts
 │
-├── CHANGELOG.md
 └── README.md
 ```
 
@@ -254,25 +255,9 @@ scripts/utility/cleanup-environment.sh
 
 ---
 
-# 📅 Changelog
-
-See the full release history:
-
-[CHANGELOG.md](https://changelog.md/)
-
----
-
 # 👤 Author
 
 **Mejri Mehdi**
-
----
-
-# 📝 License
-
-MIT License — Use this as your own portfolio piece.
-
-Credit appreciated but not required.
 
 ---
 
