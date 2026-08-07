@@ -23,7 +23,7 @@ var vnetRg = 'rg-networking-spoke-dev'
 var subnetName = 'snet-dev-default'
 
 // ── Module: Storage Account ─────────────────────────
-module storage '../../modules/storage/storage-account/main.bicep' = {
+module storage '../modules/storage/storage-account/main.bicep' = {
   name: 'deploy-storage'
   scope: rg
   params: {
@@ -35,7 +35,7 @@ module storage '../../modules/storage/storage-account/main.bicep' = {
 }
 
 // ── Module: App Service ─────────────────────────────
-module appService '../../modules/compute/app-service/main.bicep' = {
+module appService '../modules/compute/app-service/main.bicep' = {
   name: 'deploy-appservice'
   scope: rg
   params: {
@@ -48,7 +48,7 @@ module appService '../../modules/compute/app-service/main.bicep' = {
 }
 
 // ── Module: SQL Server + Database ───────────────────
-module sql '../../modules/database/sql-server/main.bicep' = {
+module sql '../modules/database/sql-server/main.bicep' = {
   name: 'deploy-sql'
   scope: rg
   params: {
