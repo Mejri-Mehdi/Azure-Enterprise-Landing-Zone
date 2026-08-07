@@ -45,3 +45,4 @@ resource vnetIntegration 'Microsoft.Web/sites/networkConfig@2022-09-01' = {
 
 output appUrl string = 'https://${app.properties.defaultHostName}'
 output appId string = app.id
+ 
