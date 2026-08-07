@@ -1,3 +1,8 @@
+<p align="center">
+  <img width="200" height="200" alt="Azure Mastery Badge" src="https://img.icons8.com/fluency/200/azure-1.png" />
+</p>
+
+
 # 🏢 Azure Enterprise Landing Zone — NexGen Cloud Foundation
 
 **Production-Grade Azure Foundation — Built from Scratch**  
@@ -105,11 +110,23 @@ Turning a working infrastructure into a portfolio piece.
 - **Automated alerts** for resource group deletion and budget thresholds
 
 ---
-![alt text](</overview/Screenshot 2026-08-07 172541.png>)
+
+<p align="center">
+  <img src="overview/Screenshot 2026-08-07 172541.png" alt="Overview Screenshot 1" width="900"/>
+</p>
+
 ---
-![alt text](</overview/Screenshot 2026-08-07 172555.png>)
+
+<p align="center">
+  <img src="overview/Screenshot 2026-08-07 172555.png" alt="Overview Screenshot 2" width="900"/>
+</p>
+
 ---
-![alt text](</overview/Screenshot 2026-08-07 172602.png>)
+
+<p align="center">
+  <img src="overview/Screenshot 2026-08-07 172602.png" alt="Overview Screenshot 3" width="900"/>
+</p>
+
 ---
 
 ---
@@ -265,3 +282,7 @@ scripts/utility/cleanup-environment.sh
 > Every decision documented.  
 > Every resource coded.  
 > This is how enterprises move to the cloud.
+
+
+⭐ *If this repository helps your Azure journey, give it a star. If you’re hiring, let’s talk.*
+    * To be continued ...*
