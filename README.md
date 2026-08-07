@@ -2,6 +2,7 @@
   <img width="200" height="200" alt="Azure Mastery Badge" src="https://img.icons8.com/fluency/200/azure-1.png" />
 </p>
 
+---
 
 # Azure Enterprise Landing Zone — NexGen Cloud Foundation
 
