@@ -1,6 +1,6 @@
 # 🏢 Azure Enterprise Landing Zone — NexGen Cloud Foundation
 
-**Production-Grade Azure Foundation — Built from Scratch in 42 Days**  
+**Production-Grade Azure Foundation — Built from Scratch**  
 *A complete, automated, governance-first cloud operating model for a fictional mid-size company (NexGen Tech)*
 
 ---
