@@ -104,10 +104,10 @@ Turning a working infrastructure into a portfolio piece.
 - **Backup policies** with 30‑day retention and instant restore
 - **Automated alerts** for resource group deletion and budget thresholds
 
-![Mind Map of Key Components](<markmap (2).svg>)
+![Mind Map of Key Components][text](<diagram 1.html>)
 *Interactive mind map of the entire foundation.*
 
-![Project Journey & Skills Demonstrated](<markmap (3).svg>)
+![Project Journey & Skills Demonstrated][text](<diagram 2.html>)
 *At a glance: how each phase maps to real‑world cloud architect skills.*
 
 ---
