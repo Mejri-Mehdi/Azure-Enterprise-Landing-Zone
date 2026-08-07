@@ -29,7 +29,7 @@ This repository is the result: a **real-world, deployable enterprise landing zon
 
 Every phase was built and deployed with **Bicep**, validated via **GitHub Actions**, and documented with decision records and dashboards.
 
-### 🛡️ Phase 1 — Governance Foundation (Days 1–14)
+### 🛡️ Phase 1 — Governance Foundation
 The control plane that everything else sits on.
 - **Management Group Hierarchy**: `mg-nexgen-root` → `mg-prod`, `mg-nonprod`, `mg-sandbox`  
 - **Custom RBAC Roles**: 5 roles (Platform Engineer, DevOps, Developer, Security Reader, Cost Manager) implementing least‑privilege.
@@ -38,7 +38,7 @@ The control plane that everything else sits on.
 - **Budgets & Alerts**: $50 non‑prod / $100 prod monthly budgets with 50/80/100% email alerts.
 - **CI/CD**: GitHub Actions pipeline to deploy governance on push.
 
-### 🌐 Phase 2 — Network Architecture (Days 15–21)
+### 🌐 Phase 2 — Network Architecture
 Hub‑and‑spoke with zero‑trust networking.
 - **Hub VNet** (`10.0.0.0/16`) with subnets: `AzureBastionSubnet`, `AzureFirewallSubnet`, `GatewaySubnet`, `snet-shared-svc`.
 - **Azure Bastion** (Standard SKU) for secure VM access without public IPs.
@@ -48,7 +48,7 @@ Hub‑and‑spoke with zero‑trust networking.
 - **Tiered NSGs**: Web allows HTTP/HTTPS + SSH from Bastion only; App allows port 8080 from Web subnet only; DB allows 1433 from App subnet only. Explicit Deny All at priority 4096.
 - **Private DNS Zones** for blob, keyvault, and SQL — linked to all VNets, ready for Private Endpoints.
 
-### 🔒 Phase 3 — Security Baseline & Shared Services (Days 22–28)
+### 🔒 Phase 3 — Security Baseline & Shared Services
 Making the foundation fortress‑grade and operationally ready.
 - **Log Analytics Workspace** (PerGB2018, 30‑day retention, resource‑based access control).
 - **Recovery Services Vault** with daily backup policy (30‑day retention, instant restore, public network access disabled).
@@ -56,7 +56,7 @@ Making the foundation fortress‑grade and operationally ready.
 - **Activity Log Alert**: immediate email on resource group deletion via Action Group.
 - **Shared Services Orchestrator** (`main.bicep`): one command deploys all the above to `rg-shared-services-hub`.
 
-### 🧑‍💻 Phase 4 — Self‑Service Developer Platform (Days 29–33)
+### 🧑‍💻 Phase 4 — Self‑Service Developer Platform
 Empowering developers to get environments in minutes, not days.
 - **Reusable Bicep Modules** (library):  
   - Linux VM (no public IP, auto‑tags)  
@@ -66,7 +66,7 @@ Empowering developers to get environments in minutes, not days.
 - **Environment Orchestrator** (`dev-environment.bicep`): deploys a complete dev environment (RG + App Service + Storage + SQL) using the modules, with globally unique names via `uniqueString()`.
 - **GitHub Actions Workflow** (`provision-environment.yml`): manual trigger with environment choice, Bicep build + what‑if validation, and production approval gates.
 
-### 📊 Phase 5 — Polish & Documentation (Days 34–42)
+### 📊 Phase 5 — Polish & Documentation
 Turning a working infrastructure into a portfolio piece.
 - **Compliance Dashboard** (Azure Workbook): real‑time policy compliance pie chart, top non‑compliant resources, compliance rate by policy.
 - **Cost Dashboard** (Azure Workbook): cost by environment, top resource groups by spend.
