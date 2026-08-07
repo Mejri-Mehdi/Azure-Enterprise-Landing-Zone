@@ -10,4 +10,4 @@ $subnetId = az network vnet subnet show `
 az deployment group create `
   --resource-group rg-test-stg `
   --template-file src/modules/storage/storage-account/main.bicep `
-  --parameters storageAccountName=stnexgendev001 subnetId=$subnetId
+  --parameters storageAccountName=stnexgendev001 subnetId=$subnetId 
