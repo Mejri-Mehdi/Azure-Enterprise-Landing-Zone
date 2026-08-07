@@ -286,4 +286,4 @@ scripts/utility/cleanup-environment.sh
 
 ⭐ *If this repository helps your Azure journey, give it a star. If you’re hiring, let’s talk.*
     
-    *To be continued ...*
+    To be continued ...
